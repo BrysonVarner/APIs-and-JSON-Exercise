@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace APIsAndJSON
 {
-    internal class RonVSKanyeAPI
+    public class RonVSKanyeAPI
     {
+        public static void ConversationSim(int loops)
+        {
+            for (var i = 0; i < loops; i++)
+            {
+                RonQuoteGenerator.RonQuote();
+                Thread.Sleep(1000);
+                KanyeQuoteGenerator.KanyeQuote();
+                Thread.Sleep(1000);
+            }
+        }
     }
 }
