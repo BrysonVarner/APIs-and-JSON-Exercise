@@ -16,7 +16,16 @@ namespace APIsAndJSON
                 switch (entry.ToLower())
                 {
                     case "1":
-                        RonVSKanyeAPI.ConversationSim(5);
+                        Console.WriteLine("How many times do you want them to communicate?");
+                        var response = Console.ReadLine();
+                        if (int.TryParse(response, out var value))
+                        {
+                            RonVSKanyeAPI.ConversationSim(value);
+                        }
+                        else
+                        {
+                            RonVSKanyeAPI.ConversationSim(5);
+                        }                        
                         break;
                     case "2":
                         string key = File.ReadAllText("appsettings.json");
